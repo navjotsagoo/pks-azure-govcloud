@@ -12,24 +12,25 @@ https://github.com/projectcontour/contour/tree/master/examples/contour
 
 - Upload certs in a new `projectcontour` namespace
 
-```bash
-kubectl create namespace projectcontour
+    ```bash
+    kubectl create namespace projectcontour
 
-kubectl create secret -n projectcontour generic cacert \
-        --from-file=./certs/cacert.pem
+    kubectl create secret -n projectcontour generic cacert \
+            --from-file=./certs/cacert.pem
 
-kubectl create secret -n projectcontour tls contourcert \
-        --key=./certs/contourkey.pem --cert=./certs/contourcert.pem
+    kubectl create secret -n projectcontour tls contourcert \
+            --key=./certs/contourkey.pem --cert=./certs/contourcert.pem
 
-kubectl create secret -n projectcontour tls envoycert \
-        --key=./certs/envoykey.pem --cert=./certs/envoycert.pem
-```
+    kubectl create secret -n projectcontour tls envoycert \
+            --key=./certs/envoykey.pem --cert=./certs/envoycert.pem
+    ```
 
 - Change the location of the docker `images` to internal private registry in `03-contour.yaml` and `O3-envoy.yaml`.
 
-- Create a `docker-registry` secret and modify the the two deployment files above to pull images with the proper credentials in the manifest.
+- Create a `docker-registry` secret and modify the the two deployment files mentioned above `03-contour.yaml` and `03-envoy.yaml` to pull images with the proper credentials in the manifest.
 
-    `kubectl create secret docker-registry harbor-registry-secret --docker-server=https://harbor-registry-domain --docker-username=username --docker-password=password -n projectcontour`
+    `kubectl create secret docker-registry harbor-registry-secret \
+        --docker-server=https://harbor-registry-domain --docker-username=username --docker-password=password -n projectcontour`
 
   ```
   imagePullSecrets:
