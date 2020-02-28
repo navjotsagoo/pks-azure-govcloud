@@ -18,8 +18,10 @@ Modify `/etc/hosts` with the following entry in your jumpbox where you install P
 **Kubernetes Cloud Provider**
 The default security group does not apply to any virtual machines on PKS. Instead, PKS VMs will inherit the **default** security group listed in the Ops Manager Director Config Tile. So, make sure that security group will allow inbound access over port 8443 (K8 Master) and 443 (Application Workloads). This is a known issue to be fixed in upcoming versions of VMWare PKS on Azure. Ref: https://docs.pivotal.io/pks/1-6/release-notes.html (Azure Default Security Group Is Not Automatically Assigned to Cluster VMs)
 
+The PKS Tile security group configuration is about telling PKS what NSG K8s should try to update when you create LoadBalancer services.  It was never about assigning that NSG to VMs. 
+
 **UAA**
-Enable option so clusters can use UAA as the OIDC provider. This will allow for generation of role based credentials and access control to clusters by developer on product teams. Leave the default settings. See file `developers-rbac-access.md` for further details. 
+Enable option so clusters can use UAA as the OIDC provider. This will allow for generation of role based credentials and access control to clusters by developer on product teams. Leave the default settings. See file `developers-rbac-access.md` for further details.
 
 **In Cluster Monitoring**
 Select *Enable Metric Sink Resources* and *Enable Log Sink Resources* to allow for logs and metrics to be send to Azure Log Analytics Workspace. This will deploy fluentd-bit as containers across all K8 vms to aggregate logs and send them to a designated endpoint in Azure.
