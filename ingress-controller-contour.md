@@ -29,7 +29,8 @@ https://github.com/projectcontour/contour/tree/master/examples/contour
 
 - Create a `docker-registry` secret and modify the the two deployment files mentioned above `03-contour.yaml` and `03-envoy.yaml` to pull images with the proper credentials in the manifest.
 
-    ```kubectl create secret docker-registry harbor-registry-secret \
+    ```
+    kubectl create secret docker-registry harbor-registry-secret \
         --docker-server=https://harbor-registry-domain --docker-username=username --docker-password=password -n projectcontour
     ```
 
