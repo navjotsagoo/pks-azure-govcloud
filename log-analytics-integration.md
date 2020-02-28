@@ -19,3 +19,4 @@ spec:
 
 Reference
 - https://docs.pivotal.io/pks/1-6/create-sinks.html
+- https://github.com/influxdata/telegraf/tree/master/plugins/outputs/azure_monitor
