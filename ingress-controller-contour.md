@@ -12,7 +12,7 @@ https://github.com/projectcontour/contour/tree/master/examples/contour
 
 - Upload certs in a new `projectcontour` namespace
 
-    ```bash
+    ```
     kubectl create namespace projectcontour
 
     kubectl create secret -n projectcontour generic cacert \
@@ -41,7 +41,7 @@ https://github.com/projectcontour/contour/tree/master/examples/contour
   - name: harbor-registry-secret
   ```
 
-- Update the `02-service-envoy.yaml` file with Azure Load Balancer annotation and a Pre-Provisioned Public IP Address that will be assigned to the load balancer (this Load Balancer will be dedicated for the ingress of application workloads). Sample Reference: https://gist.github.com/nsagoo-pivotal/7524d338feab96f2ebbd85d2646d6905
+- Update the `02-service-envoy.yaml` file with Azure Load Balancer *annotation* and a Pre-Provisioned Public *IP Address* that will be assigned to the load balancer (this Load Balancer will be dedicated for the ingress of application workloads). Sample Reference: https://gist.github.com/nsagoo-pivotal/7524d338feab96f2ebbd85d2646d6905
 
 - `kubectl apply -f ` on all the manifest deployment files)
 
