@@ -4,7 +4,7 @@ Note: Calico is an open-source project with enterprise support available from Ti
 
 Here is a modified deployment manifest that deploys Calico on PKS which comes in with flannel CNI.
 
-1. Obtain PKS cluster with **priveleged containers** support enabled
+1. Obtain PKS cluster with **priveleged containers** support enabled (check plan configuration)
 
     - this is necessary for Calico to be installed on the nodes (otherwise you will receive `The DaemonSet "calico-node" is invalid: spec.template.spec.containers[0].securityContext.privileged: Forbidden: disallowed by cluster policy` error)
 
