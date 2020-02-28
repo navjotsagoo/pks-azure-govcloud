@@ -41,3 +41,4 @@ Instead of using PKS CLI, developers can instead used a kubectl plugin `pkstoken
 References:
 - https://docs.pivotal.io/pks/1-6/manage-cluster-permissions.html
 - https://github.com/pivotal/pkstoken
+- https://kubernetes.io/docs/tasks/extend-kubectl/kubectl-plugins/
