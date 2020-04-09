@@ -15,8 +15,11 @@ spec:
   output_properties:
       Customer_ID: <Workspace_ID>
       Shared_key:  <Workspace_Secret_Key>
+      Endpoint: ods.opinsights.azure.us
 ```
 
 Reference
 - https://docs.pivotal.io/pks/1-6/create-sinks.html
 - https://github.com/influxdata/telegraf/tree/master/plugins/outputs/azure_monitor
+- https://github.com/yokawasa/fluent-plugin-azure-loganalytics
+- https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-services-monitoringandmanagement 
