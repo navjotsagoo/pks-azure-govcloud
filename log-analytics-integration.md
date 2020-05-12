@@ -15,7 +15,7 @@ spec:
   output_properties:
       Customer_ID: <Workspace_ID>
       Shared_key:  <Workspace_Secret_Key>
-      Endpoint: ods.opinsights.azure.us
+      Host: <workspace_id>.ods.opinsights.azure.us
 ```
 
 Reference
